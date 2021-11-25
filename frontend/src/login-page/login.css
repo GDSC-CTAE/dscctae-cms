@@ -1,0 +1,13 @@
+.login-container{
+    height: 100vh;
+}
+.card{
+    border: none !important;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    border-radius: 10px 10px 10px 10px !important;
+    color: white;
+}
+.login-heading{
+    background-color: #1a73e8 !important;
+    border-radius: 10px 10px 0px 0px !important;
+}

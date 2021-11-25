@@ -1,11 +1,9 @@
-import logo from './logo.svg';
+
 import './App.css';
-import login from'./login-page/login'
+import Routing from './Routing';
 function App() {
   return (
-    <div className="App text-center h-100">
-       <login />
-    </div>
+      <Routing />
   );
 }
 
