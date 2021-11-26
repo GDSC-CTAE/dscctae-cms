@@ -3,18 +3,55 @@ import React from 'react';
 export const SidebarData = [
     {
         title:'Home',
-        path:'/',
+        subNav:[
+            {
+                title:'Create Event',
+                path:"/create-event"
+            },
+            {
+                title:'/View Events',
+                path:'view-all-events'
+            }
+        ]
+        
     },
     {
         title:'Events',
-        path:'/events',
+        subNav:[
+            {
+                title:'Create Event',
+                path:"/create-event"
+            },
+            {
+                title:'/View Events',
+                path:'view-all-events'
+            }
+        ]
     },
     {
         title:'Projects',
-        path:'/projects',
+        subNav:[
+            {
+                title:'Create Project',
+                path:'/create-project'
+            },
+            {
+                title:'/View Projects',
+                path:"/view-all-projects"
+            }
+        ]
     },
     {
         title:'Team Members',
-        path:'/team-member'
+        subnav:[
+            {
+                title:"Add Team Member",
+                path:"/add-team-member",
+            },
+            {
+                title:"View Team Members",
+                path:"/view-all-team-members",
+            }
+        ]
     }
 ]

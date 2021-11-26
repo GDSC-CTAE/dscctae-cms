@@ -16,13 +16,16 @@ code {
   --bs-gutter-x: 0rem !important;
 }
 /* #1a73e8  */
-h3{
+h3,h4,h1,h2,h5,h6{
   margin:0% !important;
 }
 li{
   list-style: none;
 }
 a{
-  color: black !important;
+
   text-decoration: none !important;
+}
+hr{
+  margin: 0% !important;
 }

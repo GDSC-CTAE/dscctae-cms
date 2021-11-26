@@ -2,32 +2,42 @@
   display: flex;
   justify-content: start;
   align-items: center;
-
+  color: white;
+  font-size: 20px;
   list-style: none;
   height: 40px;
-  
+  padding: 0px 16px;
+  font-weight: 400;
 }
 .navbar-toggle{
-  font-size: 30px;
+  font-size: 40px;
+  font-weight:900;
 }
-
-.nav-text a{
-  color: white !important;
-  font-size: 20px;
-  width: 100%;
-  display: flex;
-  height: 100%;
-  padding: 0px 16px;
-  align-items: center;
-  border-radius: 50%;
+.close-bars{
+  color: white;
+}
+.nav-selected{
+  background-color: rgba(255, 255, 255, 0.74);
+  color: #1a73e8 ;
+  border-radius: 5px 5px 5px 5px;
+}
+.sub-nav{
+  border-left: 3px solid white;
+  background-color: rgba(255, 255, 255, 0.171);
+  cursor: pointer;
 }
 
 .nav-text:hover{
-  background-color: white;
-  border-radius: 30px 30px 30px 30px;
+  background-color: rgba(255, 255, 255, 0.171);
+  color: black;
+  border-radius: 5px 5px 5px 5px;
+  color: white;
+  font-weight: 400;
+  cursor: pointer;
 }
-.nav-text a :hover{
-  color: bisque !important;
+.nav-text:focus{
+  background-color: white;
+  color: black;
 }
 .nav-menu-item{
   width: 100%;

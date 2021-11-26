@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 import './dashboard.css';
 
 export default function DashBoard(){
-    const [sidebar,setSidebar] = useState(false);
+    const [sidebar,setSidebar] = useState(true);
     const showSidebar = () => setSidebar(!sidebar);
     return(
         <>
@@ -14,6 +14,9 @@ export default function DashBoard(){
             <Link to='#' className="menu-bars">
                 <FaIcons.FaBars className="bar-icon" onClick={showSidebar} />
             </Link>
+            <div >
+                <h4 className="text-muted">Developer Students Club , CTAE </h4>
+            </div>
         </div>
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
             <Sidenav />
