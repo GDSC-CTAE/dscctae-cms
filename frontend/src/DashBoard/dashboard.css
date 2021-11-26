@@ -1,0 +1,24 @@
+.bar-icon{
+    font-size: 30px;
+    list-style: none;
+}
+.navbar{
+    background-color:white ;
+    box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.5);
+}
+.nav-menu{
+    background-color: #1a73e8 ;
+    width: 250px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top:0;
+    left: -100%;
+    transition: 850ms;
+}
+
+.nav-menu.active{
+    left: 0;
+    transition: 350ms;
+}

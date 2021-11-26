@@ -19,3 +19,10 @@ code {
 h3{
   margin:0% !important;
 }
+li{
+  list-style: none;
+}
+a{
+  color: black !important;
+  text-decoration: none !important;
+}
