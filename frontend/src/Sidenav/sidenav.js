@@ -17,9 +17,9 @@ export default function Sidenav({menu}){
             </div>
             {color && menu.subNav.map((it,index)=>{
                 return(
-                    <div className="sub-nav" >
+                    <div className={color?"sub-nav show":"sub-nav"}>
                         <Link to={it.path}>
-                            <li className="sub-nav-text " key={index}>
+                            <li className={color?"sub-nav-text show":"sub-nav-text"} key={index}>
                                 {it.subname}
                             </li>
                         </Link>
@@ -27,6 +27,7 @@ export default function Sidenav({menu}){
                     </div>
                 )
             })}
+            
         </>                     
     )
 }
