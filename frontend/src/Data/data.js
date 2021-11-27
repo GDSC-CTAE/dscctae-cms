@@ -1,55 +1,61 @@
 import React from 'react';
-
+import * as AiIcons from 'react-icons/ai';
+import * as BsIcons from 'react-icons/bs';
+import * as IoIcons from 'react-icons/io';
 export const SidebarData = [
     {
         title:'Home',
+        icon:<AiIcons.AiFillHome />,
         subNav:[
             {
-                title:'Create Event',
+                subname:'Create Event',
                 path:"/create-event"
             },
             {
-                title:'/View Events',
-                path:'view-all-events'
+                subname:'View Events',
+                path:'/view-all-events'
             }
         ]
         
     },
     {
         title:'Events',
+        icon:<BsIcons.BsFillCalendarEventFill />,
         subNav:[
             {
-                title:'Create Event',
+                subname:'Create Event',
                 path:"/create-event"
             },
             {
-                title:'/View Events',
-                path:'view-all-events'
+                subname:'View Events',
+                path:'/view-all-events'
             }
         ]
     },
     {
         title:'Projects',
+        icon:<AiIcons.AiFillProject />,
         subNav:[
             {
-                title:'Create Project',
+                subname:'Create Project',
                 path:'/create-project'
             },
             {
-                title:'/View Projects',
+                subname:'View Projects',
                 path:"/view-all-projects"
             }
         ]
     },
     {
         title:'Team Members',
-        subnav:[
+        icon : <IoIcons.IoIosPeople />,
+        subNav:[
             {
-                title:"Add Team Member",
+                subname:"Add Team Member",
                 path:"/add-team-member",
             },
             {
-                title:"View Team Members",
+                subname:"View Team Members",
                 path:"/view-all-team-members",
             }
         ]
