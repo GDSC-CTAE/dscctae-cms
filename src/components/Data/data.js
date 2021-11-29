@@ -38,7 +38,7 @@ export const SidebarData = [
         subNav:[
             {
                 subname:'Create Project',
-                path:'/create-project'
+                path:'/dash-board/create-project'
             },
             {
                 subname:'View Projects',

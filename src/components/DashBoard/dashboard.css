@@ -33,3 +33,13 @@
     text-align: center;
     width: fit-content;
 }
+.main-content{
+    left: 0;
+    transition: 850ms;
+    padding: 3%;
+}
+.main-content.active{
+    margin-left: 280px;
+    transition: 350ms;
+    padding: 3%;
+}
