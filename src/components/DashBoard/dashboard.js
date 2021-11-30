@@ -3,9 +3,10 @@ import Sidenav from "../Sidenav/sidenav";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import { Link , Outlet } from "react-router-dom";
-// import Events from '../Events/events';
+import Events from '../Events/events';
 import "./dashboard.css";
 import { SidebarData } from "../Data/data";
+import EventForm from "../EventForm/Eventform";
 export default function DashBoard() {
   const [sidebar, setSidebar] = useState(false);
   const showSidebar = () => setSidebar(!sidebar);
@@ -21,7 +22,7 @@ export default function DashBoard() {
           </div>
         </div>
         <div className={sidebar ? "main-content active" : "main-content"}>
-          <Outlet />
+          <EventForm/>
         </div>
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul className="nav-menu-items w-100">
