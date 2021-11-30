@@ -42,7 +42,7 @@ export const SidebarData = [
             },
             {
                 subname:'View Projects',
-                path:"/view-all-projects"
+                path:"/dash-board/view-all-project"
             }
         ]
     },
@@ -52,11 +52,11 @@ export const SidebarData = [
         subNav:[
             {
                 subname:"Add Team Member",
-                path:"/add-team-member",
+                path:'/dash-board/add-team-member'
             },
             {
                 subname:"View Team Members",
-                path:"/view-all-team-members",
+                path:"/dash-board/view-all-team-members",
             }
         ]
     }

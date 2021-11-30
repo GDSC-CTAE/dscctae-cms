@@ -1,6 +1,6 @@
 .create-project-button{
     background-color: #1a73e8 !important;
-    width: 116px !important;
+    width: fit-content !important;
     color: white !important;
 }
 .create-project-button:hover{
