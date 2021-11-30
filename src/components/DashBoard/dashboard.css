@@ -9,6 +9,7 @@
 .navbar{
     background-color:white ;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  
 }
 .nav-menu{
     background-color: white;
@@ -36,10 +37,20 @@
 .main-content{
     left: 0;
     transition: 850ms;
+    height: 100vh;
     padding: 3%;
+    background-color: rgba(236, 233, 233, 0.185);
 }
 .main-content.active{
     margin-left: 280px;
     transition: 350ms;
     padding: 3%;
+}
+
+@media only screen and (max-width: 730px){
+    .main-content.active{
+        margin-left: 0px;
+        /* transition: 350ms; */
+        padding: 3%;
+    }
 }

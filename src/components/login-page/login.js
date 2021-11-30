@@ -5,9 +5,9 @@ export default function login(){
     return(
         <div className="login-container row align-items-center text-center">
             <center>
-                <div className="col-lg-4 card align-self-center ">
+                <div className="col-lg-4 login-card align-self-center ">
                     <div className="row login-heading p-2 align-items-center">
-                        <h3 className=" col ">Admin Login</h3>
+                        <h3 className=" col text-white">Admin Login</h3>
                     </div>
                     <div className="row p-5 text-dark">
                         <div className="Col-12 ">

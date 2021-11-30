@@ -10,8 +10,8 @@ export default function Routing() {
                 <Routes>
                     <Route exact path="/" element={<Login/>} ></Route>
                     <Route exact path="/dash-board" element={<DashBoard />} >
-                        <Route  path="" element={<Events />} />
-                        <Route exact path="/dash-board/create-project" element={<CreateProject />} />
+                        <Route  path="" element={<CreateProject />} />
+                        {/* <Route exact path="/dash-board/create-project" element={<CreateProject />} /> */}
                     </Route>
                     <Route exact path="/events" element={<Events/>}></Route>
                 </Routes>

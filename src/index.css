@@ -29,3 +29,24 @@ a{
 hr{
   margin: 0% !important;
 }
+body::-webkit-scrollbar {
+  display: none;
+}
+.form-control:focus {
+  border-color: #1a73e8e3 !important;
+  border-width: 2px;
+  box-shadow: 0 0 0 0.2rem #1a73e863 !important;
+} 
+.form-select:focus{
+  border-color: #1a73e8e3!important;
+  border-width: 2px;
+  box-shadow: 0 0 0 0.2rem #1a73e863 !important;
+}
+.btn:focus{
+  border-color:none !important;
+  
+  box-shadow: 0 0 0 0.2rem #1a73e863 !important;
+}
+label{
+  font-weight: 600;
+}
