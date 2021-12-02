@@ -52,7 +52,7 @@ label{
   margin-top: 2%;
 }
 @media only screen and (max-width: 730px){
-  label{
+  label,.add-project-button-container{
       margin-top: 5%;
   }
 }
