@@ -1,8 +1,23 @@
-import React from "react";
+import React ,{useState} from "react";
 import './create-project.css'
 import * as AiIcons from "react-icons/ai";
 
+
 export default function CreateProject(){
+    const arr=[];
+    const [contName,setContName] = useState([]);
+    const [has,setHas] = useState(false);
+    const onAddContibuterName = () =>{
+        setContName([...contName, 
+
+            {
+                name:'tiwari'
+            }
+        ])
+        console.log(contName);
+        setHas(true)
+    }
+
     return(
         <div className="create-project-container">
             <div className="card p-5 ">
@@ -40,19 +55,31 @@ export default function CreateProject(){
                         <label for="aboutproject">About Project</label>
                         <textarea className="form-control mt-2" id="aboutproject" type="text" placeholder="Enter Details" />
                     </div>
-                    <div className="col-lg-12 ">
-                        <label for="aboutproject">Add Contributors</label>
-                        <input className="form-control mt-2" id="emailaddress" type="text" placeholder="Enter Contributor" />
+                    <div className="col-lg-12">
+                        <label for="aboutproject" className="mt-4">Add Contributors</label>
+                        <div className="input-group  mt-2">
+                            <input className="form-control " id="emailaddress" type="text" placeholder="Enter Contributor" />
+                            <button type="button" 
+                                    className="input-group-text btn create-project-button"
+                                    onClick={onAddContibuterName}
+                            >Add</button>
+                        </div>
                     </div>
                     
+                    
                 </div>
-                <div className="row">
-                    <div className="chips rounded-pill m-2 ">
-                        <span className="chip-text">Sheetal </span><AiIcons.AiOutlineClose className="close-bars mb-1" />
-                    </div>
-                    <div className="chips rounded-pill m-2 ">
-                        <span className="chip-text">Sheetal </span><AiIcons.AiOutlineClose className="close-bars mb-1" />
-                    </div>
+                <div className="row mt-2  ">
+                       {contName.map((val,index)=>{
+                            return(
+                                <div className="chips rounded-pill col-2 m-1" key={index}>
+                                    <span className="chip-text">{val.name}</span><AiIcons.AiOutlineClose className="close-bars mb-1" />
+                                </div>
+                            )
+                        })}
+
+                       
+                     
+                   
                 </div>
 
                 <div className="row text-center mt-5 justify-content-center">

@@ -18,3 +18,12 @@
     color: #1a73e8;
     font-weight: 500;
 }
+.add-project-button-container{
+    margin-top: 33px !important;
+}
+@media only screen and (max-width: 730px){
+    .add-project-button-container{
+        margin-top: 5%;
+    }
+  }
+  
