@@ -3,13 +3,17 @@
     color: white;
 }
 .table-body{
-    background-color: #1a73e815 ;
+    background-color: #1a73e80a ;
     color: black;
 }
 table { 
     width: 100%; 
     border-collapse: collapse; 
-  }
+    height: 100%;
+}
+.add-member{
+  float: right !important;
+}
  
   /* th { 
     background: #333; 
@@ -17,7 +21,7 @@ table {
     font-weight: bold; 
   } */
   td, th { 
-    padding: 15px; 
+    padding: 10px; 
     border: 1px solid #ccc; 
     text-align: left; 
     

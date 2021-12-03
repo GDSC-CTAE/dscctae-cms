@@ -56,3 +56,20 @@ label{
       margin-top: 5%;
   }
 }
+.delete-button{
+  color: black;
+  cursor: pointer;
+  
+  /* border-radius: 50%; */
+  
+}
+.edit-button{
+  color:black;
+  cursor: pointer;
+}
+.delete-button :hover{
+    color:#1a73e8e3;
+}
+.edit-button:hover{
+  color:#1a73e8e3;
+}
