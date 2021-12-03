@@ -9,11 +9,11 @@ export const SidebarData = [
         subNav:[
             {
                 subname:'Create Event',
-                path:"/create-event"
+                path:"/dash-board/create-event"
             },
             {
                 subname:'View Events',
-                path:'/view-all-events'
+                path:'/dash-board/view-all-events'
             }
         ]
         
@@ -24,11 +24,11 @@ export const SidebarData = [
         subNav:[
             {
                 subname:'Create Event',
-                path:"/create-event"
+                path:"/dash-board/create-event"
             },
             {
                 subname:'View Events',
-                path:'/view-all-events'
+                path:'/dash-board/view-all-events'
             }
         ]
     },
