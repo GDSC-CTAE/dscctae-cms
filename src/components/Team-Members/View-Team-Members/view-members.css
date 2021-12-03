@@ -5,6 +5,8 @@
 .table-body{
     background-color: #1a73e80a ;
     color: black;
+    overflow-y: auto;
+    
 }
 table { 
     width: 100%; 
@@ -14,6 +16,7 @@ table {
 .add-member{
   float: right !important;
 }
+
  
   /* th { 
     background: #333; 
@@ -21,13 +24,17 @@ table {
     font-weight: bold; 
   } */
   td, th { 
-    padding: 10px; 
-    border: 1px solid #ccc; 
+    padding: 8px; 
+    border-bottom: 1px solid #ccc !important; 
     text-align: left; 
     
+  }
+  td{
+    height: 10% !important;
   }
 
 
    .table-container{
     overflow-x: auto !important;
+    overflow-y: auto !important;
 }

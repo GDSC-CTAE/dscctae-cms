@@ -8,7 +8,7 @@ export default function ViewTeamMembers(){
     const [query, setQuery] = useState("")
     return(
         <>
-        <div className="row mt-1 w-100 justify-content-between">
+        <div className="row mt-1 w-100 justify-content-between a">
             <div className="col-lg-3 mt-2">
                 <input className="form-control" placeholder="Search by Name" onChange={e=>setQuery(e.target.value)} />
             </div>
@@ -45,13 +45,30 @@ export default function ViewTeamMembers(){
                     }).map((val,index)=> {
                         return(
                             <tr key={index}>
-                               <td>{val.name}</td>
-                               <td>{val.role}</td>
-                               <td>{val.branch}</td>
-                               <td>{val.year}</td>
-                               <td><a href={val.linkedin}>Link</a></td>
-                               <td><a href={val.github}>Link</a></td>
-                               <td><a href={val.instagram}>Link</a></td>
+                               <td>
+                                  {(val.name)? (<div>{val.name}</div>):"NA"}
+                                </td>
+                               <td>
+                                   {(val.role)? (<div>{val.role}</div>):"NA"}
+                               </td>
+                               <td>
+                                   {(val.branch)? (<div>{val.branch}</div>):"NA"}
+                                </td>
+                               <td>
+                                   {(val.year)? (<div>{val.year}</div>):"NA"}
+                               </td>
+                               <td><a href={val.linkedin}>
+                                   {(val.linkedin)? "Link":"NA"}
+                                   </a>
+                                </td>
+                               <td><a href={val.github}>
+                                    {(val.github)? "Link":"NA"}
+                                   </a>
+                                </td>
+                               <td><a href={val.instagram}>
+                                   {(val.instagram)? "Link":"NA"}
+                                   </a>
+                                </td>
                                <td><span className="fs-4 edit-button">{val.editIcon}</span></td>
                                <td><span className="fs-4 delete-button">{val.deleteIcon}</span></td>
                             </tr>
