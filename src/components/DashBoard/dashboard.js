@@ -22,7 +22,7 @@ export default function DashBoard() {
           </div>
         </div>
         <div className={sidebar ? "main-content active" : "main-content"}>
-          <Outlet/>
+          <Outlet />
         </div>
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul className="nav-menu-items w-100">

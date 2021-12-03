@@ -1,6 +1,6 @@
 .create-project-button{
     background-color: #1a73e8 !important;
-    width: 116px !important;
+    width: fit-content !important;
     color: white !important;
 }
 .create-project-button:hover{
@@ -18,3 +18,12 @@
     color: #1a73e8;
     font-weight: 500;
 }
+.add-project-button-container{
+    margin-top: 33px !important;
+}
+@media only screen and (max-width: 730px){
+    .add-project-button-container{
+        margin-top: 5%;
+    }
+  }
+  
