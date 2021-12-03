@@ -1,9 +1,9 @@
-.create-project-button{
+.primary-button{
     background-color: #1a73e8 !important;
     width: fit-content !important;
     color: white !important;
 }
-.create-project-button:hover{
+.primary-button:hover{
     color: white;
 }
 .chips{
