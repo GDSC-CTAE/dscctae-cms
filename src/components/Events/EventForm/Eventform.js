@@ -42,7 +42,7 @@ export default function EventForm(){
                            <label for="exampleFormControlTextarea1">Description</label>
                            <textarea className="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>   
                        </div>
-
+                       <input type="file" />
                     </div>
 
                  </div>   
