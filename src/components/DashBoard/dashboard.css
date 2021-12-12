@@ -38,8 +38,10 @@
     left: 0;
     transition: 850ms;
     height: 100vh;
+    overflow-x: hidden ;
+    
     padding: 3%;
-    background-color: rgba(236, 233, 233, 0.185);
+    background-color: rgba(236, 233, 233, 0.151);
 }
 .main-content.active{
     margin-left: 280px;
