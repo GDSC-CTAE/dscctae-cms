@@ -24,3 +24,27 @@ export const db = firebase.firestore();
 export const auth = firebase.auth();
 export const storage = firebase.storage();
 export default firebase;
+
+const  signIn = async (email, password) => {
+    try {
+      const res =  await auth.signInWithEmailAndPassword(email, password);
+      const user = res.user;
+      console.log(user.uid)
+      const query = await db
+      .collection("users")
+      .where("uid", "==", user.uid)
+      .get();
+    if (query.docs.length === 0) {
+      await db.collection("users").add({
+        uid: user.uid,
+        // name: "Super Admin",
+        email: user.email,
+      });
+     }
+    } catch (err) {
+      console.error(err);
+    }
+  };
+export{
+  signIn
+}

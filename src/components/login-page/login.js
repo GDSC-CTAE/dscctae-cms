@@ -1,14 +1,14 @@
 import React , {useRef} from 'react';
 import './login.css';
 import {Link} from 'react-router-dom';
-import {signIn,useAuth} from '../../../src/firebase';
+import {signIn,useAuth} from '../../../src/components/Helper/firebase';
 export default function Login(){
     const emailRef = useRef();
     const passwordRef = useRef();
 
-    async function handleSignUp(){
+     function handleSignUp(){
         try{
-            await signIn(emailRef.current.value,passwordRef.current.value)
+             signIn(emailRef.current.value,passwordRef.current.value)
         }
         catch(error){
             console.log(error);
@@ -36,9 +36,9 @@ export default function Login(){
                             </select>
                         </div>
                         <div className="Col-12 mt-4">
-                            <Link to="/dash-board">
+                            {/* <Link to="/dash-board"> */}
                                 <button type="button" className="btn btn-primary" onClick={handleSignUp}>Login</button>
-                            </Link>
+                            {/* </Link> */}
                         </div>
                         
                     </div>
