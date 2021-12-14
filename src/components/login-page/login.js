@@ -1,7 +1,20 @@
-import React from 'react';
+import React , {useRef} from 'react';
 import './login.css';
 import {Link} from 'react-router-dom';
-export default function login(){
+import {signIn,useAuth} from '../../../src/firebase';
+export default function Login(){
+    const emailRef = useRef();
+    const passwordRef = useRef();
+
+    async function handleSignUp(){
+        try{
+            await signIn(emailRef.current.value,passwordRef.current.value)
+        }
+        catch(error){
+            console.log(error);
+            
+        }
+    }
     return(
         <div className="login-container row align-items-center text-center">
             <center>
@@ -11,10 +24,10 @@ export default function login(){
                     </div>
                     <div className="row p-5 text-dark">
                         <div className="Col-12 ">
-                           <input type="text" className="form-control" placeholder="Email-Address" />
+                           <input ref={emailRef} type="text" className="form-control" placeholder="Email-Address" />
                         </div>
                         <div className="Col-12 mt-4">
-                           <input type="password" className="form-control" placeholder="Password"  />
+                           <input ref={passwordRef} type="password" className="form-control" placeholder="Password"  />
                         </div>
                         <div className="Col-12 mt-4">
                             <select className="form-select" aria-label="Default select example">
@@ -24,7 +37,7 @@ export default function login(){
                         </div>
                         <div className="Col-12 mt-4">
                             <Link to="/dash-board">
-                                <button type="button" className="btn btn-primary">Login</button>
+                                <button type="button" className="btn btn-primary" onClick={handleSignUp}>Login</button>
                             </Link>
                         </div>
                         
