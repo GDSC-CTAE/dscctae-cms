@@ -16,8 +16,8 @@ export default function Events(){
                         <center>
                         <div className="card p-2 m-3 " >
                            
-                            <div className="row align-items-center" key={index} >
-                            <div className="p-2 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                            <div className="row  align-items-center" key={index} >
+                            <div className="p-2 text-start col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                     <h5> {val.nameofevent} </h5>
                                     <h5> {val.organiser} </h5>
                                     <h5> {val.dateofevent} </h5>
