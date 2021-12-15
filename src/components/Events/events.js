@@ -1,15 +1,29 @@
-import React from "react"
+import React, {useEffect} from "react"
 import Eventform from "./EventForm/Eventform.js";
 import { EventInfo } from "./EventData/eventdata.js";
 import {Link} from 'react-router-dom'
 import ReactPaginate from "react-paginate";
 import { useState } from "react";
+import { setDefaultLocale } from "react-datepicker";
 //import ReactPaginate from 'react-Paginate'
 
 export default function Events(){
 
     const [searchquery, setSearchQuery] = useState("")
-    const [pageCount, setPageCount] = useState(0);
+    //const [pageCount, setPageCount] = useState(0);
+    const [data, setEventData] = useState("");
+
+    // useEffect(() => {
+    //     const FetchEvent= async () => {
+
+    //         const event = FetchEvent();
+            
+    //         if(event){
+    //             setEventData(event)
+    //         }
+    //     };
+    //     FetchEvent();
+    // }, [])
 
     return(
         <>
