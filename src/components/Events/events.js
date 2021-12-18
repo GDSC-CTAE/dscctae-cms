@@ -11,7 +11,7 @@ export default function Events(){
 
     const [searchquery, setSearchQuery] = useState("")
     //const [pageCount, setPageCount] = useState(0);
-    const [data, setEventData] = useState("");
+    const [event, setEventData] = useState([]);
 
     // useEffect(() => {
     //     const FetchEvent= async () => {
@@ -32,7 +32,25 @@ export default function Events(){
                                 <input onChange={ e => setSearchQuery(e.target.value) } className="form-control" placeholder="Search by event name"></input>
                         </div>
 
-                {EventInfo.map( (val, index) => {
+                 {/* {event?.filter( (post)=> {
+                       if(searchquery == "")
+                       return post
+                       else if(post.nameofevent?.includes(searchquery))
+                       return post;
+                     }
+                     
+                    )
+                    } */}
+                        
+                
+                {EventInfo .filter( (post)=> {
+                    if(searchquery == "")
+                    return post
+                    else if(post.nameofevent?.toLowerCase().includes(searchquery.toLowerCase()))
+                    return post;
+                  })
+                
+                .map( (val, index) => {
                     return(
                         <center>           
 
@@ -66,7 +84,10 @@ export default function Events(){
 
                         </center>
                     )
-                 })}
+                 })
+                 
+
+                }
             </div>
 
    
