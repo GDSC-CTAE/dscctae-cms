@@ -8,10 +8,10 @@ app.get("/", (req, res) => {
   res.send("Hello Developers");
 });
 const addMemberHandler = (data) => {
-  console.log(data);
-  db.collection("Users")
-    .doc(data?.name)
-    .set(data)
+  console.log("uid in backend"+ data.uid);
+  db.collection("users")
+    .doc(data.uid)
+    .set({ users: [data], }, { merge: true },)
     .then((res) => {
       console.log("Member added Successfully !");
     })
