@@ -9,8 +9,13 @@ export  const EventInfo =[
             dateofevent: 'xyz'
         },
         {
-            nameofevent : 'ishika',
-            organiser: 'tiwari',
+            nameofevent : 'XYZ',
+            organiser: 'sheetal',
+            dateofevent: 'xyz'
+        },
+        {
+            nameofevent : 'ABC',
+            organiser: 'Ishika',
             dateofevent: 'xyz'
         }
     ] 
