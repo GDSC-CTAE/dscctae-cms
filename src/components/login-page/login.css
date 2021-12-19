@@ -1,4 +1,4 @@
-.login-container{
+.login-form-container{
     height: 100vh;
 }
 .login-card {
@@ -10,4 +10,7 @@
 .login-heading{
     background-color: #1a73e8 !important;
     border-radius: 3px 3px 0px 0px !important;
+}
+.login-container{
+    padding: 23px 39px 23px 39px;
 }

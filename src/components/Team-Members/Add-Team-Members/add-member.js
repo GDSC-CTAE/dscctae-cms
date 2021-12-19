@@ -10,6 +10,8 @@ export default function AddTeamMember() {
   const dataRefs = useRef([]);
   const handleChange = (e) => {
     setFile(e.target.files[0]);
+    const tokenString = sessionStorage.getItem('token')
+  console.log(tokenString);
   };
   const addToRefs = (el) => {
     if (el && !dataRefs.current.includes(el)) {

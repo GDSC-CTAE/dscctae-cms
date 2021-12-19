@@ -42,6 +42,11 @@ body::-webkit-scrollbar {
   border-width: 2px;
   box-shadow: 0 0 0 0.2rem #1a73e863 !important;
 }
+.form-input-error{
+  border-color: rgba(228, 77, 77, 0.842) !important;
+  border-width: 2px;
+  box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.185) !important;
+}
 .btn:focus{
   border-color:none !important;
   
@@ -72,4 +77,7 @@ label{
 }
 .edit-button:hover{
   color:#1a73e8e3;
+}
+select,option{
+  cursor: pointer;
 }
