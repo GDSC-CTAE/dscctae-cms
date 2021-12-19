@@ -26,12 +26,8 @@
     "react-datepicker": "^4.4.0",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
-<<<<<<< HEAD
-    "react-router-dom": "^6.1.1",
-=======
     "react-paginate": "^8.1.0",
     "react-router-dom": "^6.0.2",
->>>>>>> f9216741d2e7c310fd54d454e0b21fbeba7ef6ab
     "react-scripts": "4.0.3",
     "style-loader": "^3.3.1",
     "web-vitals": "^1.1.2"

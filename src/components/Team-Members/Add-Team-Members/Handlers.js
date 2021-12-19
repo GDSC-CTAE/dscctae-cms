@@ -6,9 +6,14 @@ export const DataHandler = async (file, dataRefs, setLoading, setPhotoUrl) => {
     setLoading(false);
     return;
   }
+  const tokenString = sessionStorage.getItem("token");
+  if (!tokenString) {
+    console.log("User is not Authenticated !");
+    setLoading(false);
+    return;
+  }
   const url = await ImageUploadHandler(dataRefs, file, setPhotoUrl);
   console.log("hello");
-  const tokenString = sessionStorage.getItem('token');
   console.log(tokenString);
   const userData = {
     name: dataRefs.current[dataRefs.current.findIndex((el) => el.id == "name")]?.value,
@@ -19,10 +24,13 @@ export const DataHandler = async (file, dataRefs, setLoading, setPhotoUrl) => {
     instagram: dataRefs.current[dataRefs.current.findIndex((el) => el.id == "instagram")]?.value,
     role: dataRefs.current[dataRefs.current.findIndex((el) => el.id == "role")]?.value,
     picutre: url,
-    uid:tokenString,
   };
   axios
-    .post("http://localhost:5000/new_user", userData, { headers: { Authorization: `Bearer ${tokenString}` } })
+    .post(
+      "http://localhost:5000/new_user",
+      { data: userData, uid: tokenString || null },
+      { headers: { Authorization: `Bearer ${tokenString}` } }
+    )
     .then((res) => {
       console.log(res);
       console.log("ok");

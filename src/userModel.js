@@ -5,5 +5,5 @@ export const  User = {
     role:"string",
     events:[],
     project:[],
-    teamMemeber:[],
+    teamMember:[],
 }
