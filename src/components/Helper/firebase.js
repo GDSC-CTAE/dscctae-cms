@@ -13,7 +13,6 @@ const firebaseConfig = {
   measurementId: "G-5E1TYNMED5",
 };
 
-
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
@@ -23,27 +22,25 @@ export const auth = firebase.auth();
 export const storage = firebase.storage();
 export default firebase;
 
-export const  SignIn = async (email, password , role) => {
-    User.email = email;
-    User.password = password;
-    User.role = role;
-    console.log(User);
-    try {
-      const res =  await auth.signInWithEmailAndPassword(email, password);
-      const user = res.user;
-      User.uid = user.uid;
-      console.log(user.uid);
-      sessionStorage.setItem('token', user.uid)
-      const query = await db
-      .collection("users")
-      .where("uid", "==", user.uid)
-      .get();
-    if (query.docs.length === 0) {
-      await db.collection("users").add({
-       User
+export const SignIn = async (email, password, role) => {
+  User.email = email;
+  User.password = password;
+  User.role = role;
+  console.log(User);
+  try {
+    const res = await auth.signInWithEmailAndPassword(email, password);
+    const user = res.user;
+    console.log(user.uid);
+    sessionStorage.setItem("token", user.uid);
+    const query = await db.collection("Users").where("uid", "==", "lAWVGxI54fbY9Q8fH23sCm8fces1").get();
+    console.log(query);
+    if (query.empty) {
+      await db.collection("Users").add({
+        User,
+        uid: user.uid,
       });
-     }
-    } catch (err) {
-      console.error(err);
     }
-  };
+  } catch (err) {
+    console.error(err);
+  }
+};

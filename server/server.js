@@ -22,27 +22,37 @@ app.get("/", (req, res) => {
 //   console.log(req.body)
 //   addeventhandle(req.body)
 //   res.send()
-//  }     
+//  }
 // )
 
-const addMemberHandler = (data) => {
-  console.log("uid in backend"+ data.uid);
-  db.collection("users")
-    .doc(data.uid)
-    .set({ users: [data], }, { merge: true },)
-    .then((res) => {
-      console.log("Member added Successfully !");
-    })
-    .catch((err) => {
-      console.log(err, "error");
+const addMemberHandler = async (data, uid) => {
+  console.log("uid in backend" + uid);
+  try {
+    const OldData = await db.collection("Users").where("uid", "==", uid).get();
+    OldData.forEach((doc) => {
+      const ldata = doc.data();
+      ldata.User.teamMember.push(data);
+      doc.ref
+        .update({ User: ldata.User })
+        .then((res) => {
+          console.log("Member Added Successfully !");
+        })
+        .catch((err) => {
+          console.log(err, "Error");
+        });
     });
+  } catch (err) {
+    console.log(err, "error");
+  }
 };
 app.post("/new_user", (req, res) => {
   console.log(req.body);
-  addMemberHandler(req.body);
+  if (!req.body.uid) {
+    res.send({ message: "User is not Authenticated !" });
+  }
+  addMemberHandler(req.body.data, req.body.uid);
   res.send();
 });
 app.listen(5000, () => {
   console.log("Your Server is Created and Running Successfully!");
 });
-

@@ -2,7 +2,6 @@ import React, {useEffect} from "react"
 import Eventform from "./EventForm/Eventform.js";
 import { EventInfo } from "./EventData/eventdata.js";
 import {Link} from 'react-router-dom'
-import ReactPaginate from "react-paginate";
 import { useState } from "react";
 import { setDefaultLocale } from "react-datepicker";
 //import ReactPaginate from 'react-Paginate'

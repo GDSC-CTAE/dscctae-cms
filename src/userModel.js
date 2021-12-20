@@ -6,5 +6,5 @@ export const  User = {
     uid:"string",
     events:[],
     project:[],
-    teamMemeber:[],
+    teamMember:[],
 }
