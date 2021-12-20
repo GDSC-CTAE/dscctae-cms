@@ -10,7 +10,6 @@ export default function Login() {
   const [errmsg, setErrMsg] = useState(" ");
   const navigate = useNavigate();
 
-<<<<<<< HEAD
     function handleSignUp(){
         const userEmail = emailRef.current.value;
         const userPassword = passwordRef.current.value;
@@ -34,30 +33,8 @@ export default function Login() {
             setErrMsg("Enter your Email Address and Password");
             console.log(errmsg)
         }
-=======
-  function handleSignUp() {
-    const userEmail = emailRef.current.value;
-    const userPassword = passwordRef.current.value;
-    const userRole = roleRef.current.value;
-    if (userEmail && userPassword && userRole) {
-      setErrMsg("");
-      navigate("/dash-board");
-      try {
-        SignIn(userEmail, userPassword, userRole);
-      } catch (error) {
-        alert("issue on click of signup");
-        console.log(error);
-      }
-    } else if (!userEmail && userPassword) {
-      setErrMsg("Please Enter your Email Address ");
-    } else if (userEmail && !userPassword) {
-      setErrMsg("Please Enter your Password  ");
-    } else {
-      setErrMsg("Enter your Email Address and Password");
-      console.log(errmsg);
->>>>>>> dbd5c2b84371ed56e70e7338c7d2a79fa4814155
     }
-  }
+
   useEffect(() => {
     sessionStorage.removeItem("token");
   }, []);
@@ -97,4 +74,4 @@ export default function Login() {
       </center>
     </div>
   );
-}
+  }
