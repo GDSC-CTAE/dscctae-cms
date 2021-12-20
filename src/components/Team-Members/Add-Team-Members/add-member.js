@@ -18,7 +18,7 @@ export default function AddTeamMember() {
   };
 
   return (
-    <div className="card p-5" stle={{ position: "relative" }}>
+    <div className="card p-5" style={{ position: "relative" }}>
       {loading && <Loading message={"Adding Member.... Please Wait"} />}
       <div>
         <h5 className="text-muted">Add Team Member</h5>

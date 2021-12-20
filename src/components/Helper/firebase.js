@@ -1,6 +1,7 @@
 import firebase from "firebase";
 import "firebase/auth";
 import {User} from './../../userModel';
+import { useNavigate } from "react-router-dom";
 
 const firebaseConfig = {
   apiKey: "AIzaSyB1K1PQLWSwOPx-An9bN67TZAZuEtR-ZLQ",
@@ -31,8 +32,9 @@ export const SignIn = async (email, password, role) => {
     const res = await auth.signInWithEmailAndPassword(email, password);
     const user = res.user;
     console.log(user.uid);
+    User.uid = user.uid;
     sessionStorage.setItem("token", user.uid);
-    const query = await db.collection("Users").where("uid", "==", "lAWVGxI54fbY9Q8fH23sCm8fces1").get();
+    const query = await db.collection("Users").where("uid", "==", user.uid).get();
     console.log(query);
     if (query.empty) {
       await db.collection("Users").add({
@@ -44,3 +46,11 @@ export const SignIn = async (email, password, role) => {
     console.error(err);
   }
 };
+
+export const SignOut = () =>{
+  sessionStorage.clear();
+  User.uid = " ";
+  if(User.uid === " "){
+    return true;
+  }
+}

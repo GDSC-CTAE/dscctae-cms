@@ -45,6 +45,7 @@ const addMemberHandler = async (data, uid) => {
     console.log(err, "error");
   }
 };
+
 app.post("/new_user", (req, res) => {
   console.log(req.body);
   if (!req.body.uid) {

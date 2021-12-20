@@ -9,7 +9,7 @@ export default function Login() {
   const roleRef = useRef();
   const [errmsg, setErrMsg] = useState(" ");
   const navigate = useNavigate();
-
+     
     function handleSignUp(){
         const userEmail = emailRef.current.value;
         const userPassword = passwordRef.current.value;
@@ -58,7 +58,7 @@ export default function Login() {
             </div>
             <div className="Col-12 mt-4">
               <select ref={roleRef} className="form-control" aria-label="Default select example">
-                <option selected>Select Role</option>
+                <option defaultValue="0">Select Role</option>
                 <option defaultValue="1">Super Admin</option>
               </select>
             </div>

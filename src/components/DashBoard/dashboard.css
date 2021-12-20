@@ -56,3 +56,16 @@
         padding: 3%;
     }
 }
+.user-profile{
+        position: absolute;   
+        bottom: 10px;
+        width: 100%;
+}
+.logout-button{
+    margin-left: 23%;
+    font-size: 30px;
+}
+.logout-button:hover{
+    color: #1a73e8e3;
+    cursor: pointer;
+}
