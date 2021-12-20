@@ -16,9 +16,9 @@ export default function Login(){
         const userRole = roleRef.current.value;
         if(userEmail && userPassword && userRole){
             setErrMsg("")
-            navigate('/dash-board');
             try{
                 SignIn(userEmail,userPassword,userRole);
+                navigate('/dash-board');
             }
             catch(error){
                 alert("issue on click of signup")

@@ -1,6 +1,7 @@
 import firebase from "firebase";
 import "firebase/auth";
-import {User} from './../../userModel'
+import {User} from './../../userModel';
+
 const firebaseConfig = {
   apiKey: "AIzaSyB1K1PQLWSwOPx-An9bN67TZAZuEtR-ZLQ",
   authDomain: "cmsportal-2738f.firebaseapp.com",
@@ -30,10 +31,11 @@ export const  SignIn = async (email, password , role) => {
     try {
       const res =  await auth.signInWithEmailAndPassword(email, password);
       const user = res.user;
+      User.uid = user.uid;
       console.log(user.uid);
       sessionStorage.setItem('token', user.uid)
       const query = await db
-      .collection("Users")
+      .collection("users")
       .where("uid", "==", user.uid)
       .get();
     if (query.docs.length === 0) {
