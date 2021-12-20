@@ -10,8 +10,6 @@ export default function AddTeamMember() {
   const dataRefs = useRef([]);
   const handleChange = (e) => {
     setFile(e.target.files[0]);
-    const tokenString = sessionStorage.getItem('token')
-  console.log(tokenString);
   };
   const addToRefs = (el) => {
     if (el && !dataRefs.current.includes(el)) {
@@ -20,7 +18,7 @@ export default function AddTeamMember() {
   };
 
   return (
-    <div className="card p-5" style={{ position: "relative" }}>
+    <div className="card p-5" stle={{ position: "relative" }}>
       {loading && <Loading message={"Adding Member.... Please Wait"} />}
       <div>
         <h5 className="text-muted">Add Team Member</h5>
