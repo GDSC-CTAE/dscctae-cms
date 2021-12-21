@@ -89,50 +89,6 @@ export default function ViewTeamMembers() {
                   </tr>
                 );
               })}
-            {/* <tr>
-                    <td>Sheetal</td>
-                    <td>Web Lead</td>
-                    <td>Computer Science and Engineering</td>
-                    <td>3rd year</td>
-                    <td><a href="https://www.linkedin.com/in/sheetal-dadhich-a48980191/">Link</a></td>
-                    <td><a href="https://www.linkedin.com/in/sheetal-dadhich-a48980191/">Link</a></td>
-                    <td><a href="https://www.linkedin.com/in/sheetal-dadhich-a48980191/">Link</a></td>
-                    <td><MdIcons.MdModeEditOutline className="fs-3 edit-button" /></td>
-                    <td><MdIcons.MdDelete className="fs-3 delete-button" /></td>
-                </tr> */}
-            {/* <tr>
-                    <td>Sheetal</td>
-                    <td>Web Lead</td>
-                    <td>Computer Science and Engineering</td>
-                    <td>3rd year</td>
-                    <td><a href="https://www.linkedin.com/in/sheetal-dadhich-a48980191/">Link</a></td>
-                    <td><a href="https://www.linkedin.com/in/sheetal-dadhich-a48980191/">Link</a></td>
-                    <td><a href="https://www.linkedin.com/in/sheetal-dadhich-a48980191/">Link</a></td>
-                    <td><MdIcons.MdModeEditOutline className="fs-3 edit-button" /></td>
-                    <td><MdIcons.MdDelete className="fs-3 delete-button" /></td>
-                </tr> */}
-            {/* <tr>
-                    <td>Sheetal</td>
-                    <td>Web Lead</td>
-                    <td>Computer Science and Engineering</td>
-                    <td>3rd year</td>
-                    <td><a href="https://www.linkedin.com/in/sheetal-dadhich-a48980191/">Link</a></td>
-                    <td><a href="https://www.linkedin.com/in/sheetal-dadhich-a48980191/">Link</a></td>
-                    <td><a href="https://www.linkedin.com/in/sheetal-dadhich-a48980191/">Link</a></td>
-                    <td><MdIcons.MdModeEditOutline className="fs-3 edit-button" /></td>
-                    <td><MdIcons.MdDelete className="fs-3 delete-button" /></td>
-                </tr> */}
-            {/* <tr>
-                    <td>Sheetal</td>
-                    <td>Web Lead</td>
-                    <td>Computer Science and Engineering</td>
-                    <td>3rd year</td>
-                    <td><a href="https://www.linkedin.com/in/sheetal-dadhich-a48980191/">Link</a></td>
-                    <td><a href="https://www.linkedin.com/in/sheetal-dadhich-a48980191/">Link</a></td>
-                    <td><a href="https://www.linkedin.com/in/sheetal-dadhich-a48980191/">Link</a></td>
-                    <td><MdIcons.MdModeEditOutline className="fs-3 edit-button" /></td>
-                    <td><MdIcons.MdDelete className="fs-3 delete-button" /></td>
-                </tr> */}
           </tbody>
         </table>
       </div>

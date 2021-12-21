@@ -9,29 +9,32 @@ export default function Login() {
   const roleRef = useRef();
   const [errmsg, setErrMsg] = useState(" ");
   const navigate = useNavigate();
-
-  function handleSignUp() {
-    const userEmail = emailRef.current.value;
-    const userPassword = passwordRef.current.value;
-    const userRole = roleRef.current.value;
-    if (userEmail && userPassword && userRole) {
-      setErrMsg("");
-      navigate("/dash-board");
-      try {
-        SignIn(userEmail, userPassword, userRole);
-      } catch (error) {
-        alert("issue on click of signup");
-        console.log(error);
-      }
-    } else if (!userEmail && userPassword) {
-      setErrMsg("Please Enter your Email Address ");
-    } else if (userEmail && !userPassword) {
-      setErrMsg("Please Enter your Password  ");
-    } else {
-      setErrMsg("Enter your Email Address and Password");
-      console.log(errmsg);
+     
+    function handleSignUp(){
+        const userEmail = emailRef.current.value;
+        const userPassword = passwordRef.current.value;
+        const userRole = roleRef.current.value;
+        if(userEmail && userPassword && userRole){
+            setErrMsg("")
+            try{
+                SignIn(userEmail,userPassword,userRole);
+                navigate('/dash-board');
+            }
+            catch(error){
+                alert("issue on click of signup")
+                console.log(error);
+            }
+        }else if( !userEmail && userPassword ){
+            setErrMsg("Please Enter your Email Address ");
+        }else if(userEmail && !userPassword){
+            setErrMsg("Please Enter your Password  ")
+        }
+        else{
+            setErrMsg("Enter your Email Address and Password");
+            console.log(errmsg)
+        }
     }
-  }
+
   useEffect(() => {
     sessionStorage.removeItem("token");
   }, []);
@@ -55,7 +58,7 @@ export default function Login() {
             </div>
             <div className="Col-12 mt-4">
               <select ref={roleRef} className="form-control" aria-label="Default select example">
-                <option selected>Select Role</option>
+                <option defaultValue="0">Select Role</option>
                 <option defaultValue="1">Super Admin</option>
               </select>
             </div>
@@ -71,4 +74,4 @@ export default function Login() {
       </center>
     </div>
   );
-}
+  }
