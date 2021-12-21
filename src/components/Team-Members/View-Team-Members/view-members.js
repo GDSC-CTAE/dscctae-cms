@@ -14,6 +14,7 @@ export default function ViewTeamMembers() {
     const FetchMember = async () => {
       try {
         setLoading(true);
+        console.log("hello")
         const members = await FetchMembers();
         if (members) {
           setData(members);
