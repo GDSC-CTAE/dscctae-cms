@@ -1,59 +1,28 @@
 import React, { useState, useRef } from "react";
-import {db} from '../../Helper/firebase'
 import DatePicker from 'react-datepicker/dist/react-datepicker'
 import "react-datepicker/dist/react-datepicker.css"
-import { EventInfo } from "../EventData/eventdata";
 import './Eventform.css'
-import axios from 'react'
+import { EventHandler } from "./EventHandler";
 
 
 export default function EventForm(){
     const [image , setimage] = useState(null);
-    const [event, setnameofevent] = useState("");
-    const [organiser, setOrganiser] = useState("");
-    const [description, setDescription] = useState("");
     const [loader, setLoader] = useState(false);
+    const [file, setFile] = useState();
+    const dataRefs = useRef([]);
+
+    const addToRefs = (input) => {
+        if(input && !dataRefs.current.includes(input) ) {
+            dataRefs.current.push(input);
+        }
+    }
 
     const handleChange = (event) => {
+        setFile(event.target.files[0])
          setimage(URL.createObjectURL(event.target.files[0]))       
     }
           
-    const [date, setStartDate] = useState(null);
-
-    function handlesubmit(e){ 
-        e.preventDefault();
-
-        db.collection('events').add({
-            nameofevent : event,
-            date : date,
-            organiser : organiser,
-            description: description,
-            image : image
-        })
-        .then( () => {
-            alert("Event Created!")
-            setLoader(false)
-        })
-        .catch( err => {
-            console.log(err)
-            setLoader(false)
-        })
-        console.log(e.target.value)
-    }
-
-    // const eventdatahandle = () => {
-
-    //     axios
-    //     .post("http://localhost:3000/newevent", 
-    //              EventInfo
-    //          )
-    //     .then((res) => {
-    //         console.log(res);
-            
-    //       });
-         
-    // }
-    
+    const [date, setStartDate] = useState(null);    
     
     return(
         <>        
@@ -66,35 +35,35 @@ export default function EventForm(){
 
                         <div className="form-group mt-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 ">
                                 <label for="exampleFormControlInput1" className="m-1">Name of event</label> 
-                                       <input onChange={ (e) => setnameofevent(e.target.value)} value={event} className="form-control " placeholder="Event Name" id="exampleFormControlInput1" type="text"/>
+                                       <input ref={addToRefs}  className="form-control " placeholder="Event Name" id="nameofevent" type="text"/>
                         </div>
 
 
                         <div className="form-group mt-4 col-sm-3 col-md-3 col-lg-3 col-xl-3">
                                 <label for="exampleFormControlInput1" className="m-1">Date of event</label> 
-                                <DatePicker selected ={date} value={date} 
+                                <DatePicker selected ={date} ref={addToRefs} 
                                 onChange={ (e) => setStartDate(e)}
                                 dateFormat="dd/MM/yyyy"
-                                className="form-control" id="exampleFormControlInput1"
+                                className="form-control" id="dateofevent"
                                 />        
                         </div>
 
                         <div className="form-group mt-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
                             <label for="exampleFormControlInput1" className="m-1">Organiser</label>
-                            <input className="form-control" value={organiser} onChange={ (e) => setOrganiser(e.target.value)} placeholder="Organiser's Name" id="exampleFormControlInput1" type="text" />
+                            <input className="form-control" ref={addToRefs}  placeholder="Organiser's Name" id="organiser" type="text" />
                         </div>
 
-                        <div className="form-group mt-2 col-12">
+                        <div className="form-group mt-4 col-12">
                            <label for="exampleFormControlTextarea1" className="m-1">Description</label>
-                           <textarea className="form-control" value={description} onChange={ (e) => setDescription(e.target.value)} placeholder="Write a description of the event" id="exampleFormControlTextarea1" rows="5"></textarea>   
+                           <textarea className="form-control" ref={addToRefs}  placeholder="Write a description of the event" id="description" rows="5"></textarea>   
                        </div>
           
 
                        <div className="row mt-3">
 
-                            <div className="mt-2 col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                            <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                 <label>Upload picture</label>
-                                <input className="form-control mt-2" type="file" onChange={handleChange} />     
+                                <input className="form-control mt-2" type='file' accept='.jpg, .png, .jpeg' id="eventclick" type="file" ref={addToRefs} onChange={handleChange} />     
                             </div>
 
                            {
@@ -112,9 +81,9 @@ export default function EventForm(){
                     </div>
 
                      
-                    <div className="row m-2 justify-content-center">
+                    <div className="row mt-5 justify-content-center">
                          <button 
-                         onClick={handlesubmit}
+                         onClick={ () => EventHandler(file, dataRefs, setLoader)}
                           type="button" className="btn btn-primary w-auto">Submit</button>
                       </div>
 
