@@ -28,9 +28,8 @@ export default function DashBoard() {
   
   return (
     <>
-    {
-      userPresent? 
-        
+    {/* {
+      userPresent?  */}
         <div>
         <div className="navbar p-3">
           <Link to="#" className="menu-bars">
@@ -65,8 +64,6 @@ export default function DashBoard() {
         </ul>
       </nav>
     </div>
-      : <Login />
-    }
 
     </>
   );

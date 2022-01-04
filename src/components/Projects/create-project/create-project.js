@@ -7,17 +7,10 @@ export default function CreateProject(){
     const arr=[];
     const [contName,setContName] = useState([]);
     const [has,setHas] = useState(false);
-    const onAddContibuterName = () =>{
-        setContName([...contName, 
-
-            {
-                name:'tiwari'
-            }
-        ])
-        console.log(contName);
-        setHas(true)
+   
+    const onEraseContributorsName = ({index}) =>{
+        console.log(index)
     }
-
     return(
         <div className="create-project-container">
             <div className="card p-5 ">
@@ -61,27 +54,24 @@ export default function CreateProject(){
                             <input className="form-control " id="emailaddress" type="text" placeholder="Enter Contributor" />
                             <button type="button" 
                                     className="input-group-text btn primary-button"
-                                    onClick={onAddContibuterName}
+                                   
                             >Add</button>
                         </div>
                     </div>
                     
                     
                 </div>
-                <div className="row mt-2  ">
+                <div className="row mt-2 ">
                        {contName.map((val,index)=>{
-                            return(
+                            return(  
                                 <div className="chips rounded-pill col-2 m-1" key={index}>
-                                    <span className="chip-text">{val.name}</span><AiIcons.AiOutlineClose className="close-bars mb-1" />
+                                    <span className="chip-text">{val.name}</span>
+                                    
+                                    {/* <AiIcons.AiOutlineClose className="close-bars mb-1"  /> */}
                                 </div>
                             )
                         })}
-
-                       
-                     
-                   
                 </div>
-
                 <div className="row text-center mt-5 justify-content-center">
                     <button type="button" className="btn primary-button">Create</button>
                 </div>
