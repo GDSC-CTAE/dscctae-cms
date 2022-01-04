@@ -14,7 +14,7 @@ export default function ViewTeamMembers() {
     const FetchMember = async () => {
       try {
         setLoading(true);
-        console.log("hello")
+        console.log("hello");
         const members = await FetchMembers();
         if (members) {
           setData(members);
@@ -81,10 +81,14 @@ export default function ViewTeamMembers() {
                       <a href={val.instagram}>{val.instagram ? "Link" : "NA"}</a>
                     </td>
                     <td>
-                      <span className="fs-4 edit-button">{val.editIcon}</span>
+                      <span className="fs-4 edit-button">
+                        <MdIcons.MdModeEditOutline />
+                      </span>
                     </td>
                     <td>
-                      <span className="fs-4 delete-button">{val.deleteIcon}</span>
+                      <span className="fs-4 delete-button">
+                        <MdIcons.MdDelete />
+                      </span>
                     </td>
                   </tr>
                 );
