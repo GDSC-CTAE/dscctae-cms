@@ -8,22 +8,34 @@ app.get("/", (req, res) => {
   res.send("Hello Developers");
 });
 
-// const addeventhandle = (eventdata) => {
-//   console.log(eventdata)
-//   db.collection("Events")
-//     .doc(eventdata?.nameofevent)
-//     .set(eventdata)
-//     .then( (response) => {
-//       console.log("Event Added Successfully")
-//     })
-// }
+const addEventhandle = async (data, uid) => {
+  
+  try{
+    const prevData = await db.collection("Users").where("uid", "==", uid).get();
+         prevData.forEach( (doc) => {
+           const Edata = doc.data();
+           Edata.User.events.push(data);
+           doc.ref
+           .update(
+             {User: Edata.User})
+           .then((res)=> {
+             console.log("Event Created");
+           })
+         })
+        }catch(err) {
+    console.log(err, "Error");
+  };
+};
 
-// app.post("/newevent" , (req, res) => {
-//   console.log(req.body)
-//   addeventhandle(req.body)
-//   res.send()
-//  }
-// )
+app.post("/newevent" , (req, res) => {
+  console.log(req.body)
+  if(!req.body.uid){
+    res.send({ message: "User is not Authenticated" });
+  }
+  addEventhandle(req.body.data, req.body.uid);
+  res.send();
+ }
+)
 
 const addMemberHandler = async (data, uid) => {
   console.log("uid in backend" + uid);
