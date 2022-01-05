@@ -11,31 +11,26 @@ app.get("/", (req, res) => {
 const addEventhandle = async (data, uid) => {
   
   try{
-    const prevData = await db.collection("Users").where("uid", "==", uid).get();
-         prevData.forEach( (doc) => {
-           const Edata = doc.data();
-           Edata.User.events.push(data);
+    const OldData = await db.collection("Users").where("uid", "==", uid).get();
+         OldData.forEach( (doc) => {
+           const ldata = doc.data();
+           ldata.User.events.push(data);
            doc.ref
            .update(
-             {User: Edata.User})
+             {User: ldata.User})
            .then((res)=> {
              console.log("Event Created");
+           })
+           .catch( (err) => {
+             console.log(err)
            })
          })
         }catch(err) {
     console.log(err, "Error");
-  };
+  }
 };
 
-app.post("/newevent" , (req, res) => {
-  console.log(req.body)
-  if(!req.body.uid){
-    res.send({ message: "User is not Authenticated" });
-  }
-  addEventhandle(req.body.data, req.body.uid);
-  res.send();
- }
-)
+
 
 const addMemberHandler = async (data, uid) => {
   console.log("uid in backend" + uid);
@@ -97,6 +92,16 @@ app.post("/new_project", (req, res) => {
   createEventHandler(req.body.data, req.body.uid);
   res.send({ message: "Project created Successfully !" });
 });
+
+app.post("/new_event" , (req, res) => {
+  if(!req.body.uid){
+    res.send({ message: "User is not Authenticated" });
+  }
+  addEventhandle(req.body.data, req.body.uid);
+  res.send({ message: "Event created Successfully !" });
+ }
+)
+
 app.listen(5000, () => {
   console.log("Your Server is Created and Running Successfully!");
 });

@@ -6,9 +6,10 @@ import { EventHandler } from "./EventHandler";
 
 
 export default function EventForm(){
-    const [image , setimage] = useState(null);
+   
     const [loader, setLoader] = useState(false);
     const [file, setFile] = useState();
+    const [photoUrl, setPhotoUrl] = useState("");
     const dataRefs = useRef([]);
 
     const addToRefs = (input) => {
@@ -18,8 +19,7 @@ export default function EventForm(){
     }
 
     const handleChange = (event) => {
-        setFile(event.target.files[0])
-         setimage(URL.createObjectURL(event.target.files[0]))       
+        setFile(event.target.files[0])      
     }
           
     const [date, setStartDate] = useState(null);    
@@ -62,14 +62,14 @@ export default function EventForm(){
                        <div className="row mt-3">
 
                             <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                                <label>Upload picture</label>
-                                <input className="form-control mt-2" type='file' accept='.jpg, .png, .jpeg' id="eventclick" type="file" ref={addToRefs} onChange={handleChange} />     
+                                <label htmlFor="photo">Upload picture</label>
+                                <input className="form-control mt-2" type='file' accept='.jpg, .png, .jpeg' id="photo"  ref={addToRefs} onChange={handleChange} />     
                             </div>
 
                            {
-                               image? (
+                               file? (
                                     <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                                         <img src={image} value={image} onChange={ (e) => setimage(e.target.value) } className="image-width"></img>
+                                         <img src={URL.createObjectURL(file)}  className="image-width"></img>
                                     </div>
                                ) : (
                                    null
@@ -83,7 +83,7 @@ export default function EventForm(){
                      
                     <div className="row mt-5 justify-content-center">
                          <button 
-                         onClick={ () => EventHandler(file, dataRefs, setLoader)}
+                         onClick={ () => EventHandler(file, dataRefs, setLoader, setPhotoUrl)}
                           type="button" className="btn btn-primary w-auto">Submit</button>
                       </div>
 
