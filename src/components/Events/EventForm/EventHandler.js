@@ -1,18 +1,18 @@
 import axios from "axios"
 import { storage } from "../../Helper/firebase";
 
-export const EventHandler = async (file, dataRefs, setLoader, setPhotoUrl) =>{
+export const EventHandler = async (file, dataRefs, setLoading, setPhotoUrl) =>{
 
-    setLoader(true);
+    setLoading(true);
     if (!file) {
-      setLoader(false);
+      setLoading(false);
       return;
     }
 
     const tokenString = sessionStorage.getItem("token");
     if (!tokenString) {
         console.log("User is not Authenticated !");
-        setLoader(false);
+        setLoading(false);
         return;
       }
 
@@ -34,11 +34,11 @@ axios.post(
 )
 .then( (res) => {
     console.log(res);
-    setLoader(false);
+    setLoading(false);
 })
 .catch( (err) =>{
      console.log(err)
-     setLoader(false);
+     setLoading(false);
 })
 }
 

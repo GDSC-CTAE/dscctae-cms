@@ -2,8 +2,8 @@
 @media only screen and (min-width: 576px){
 
 .image-width{
-    height: 70%;
-    width: 50%;
+    height: 100%;
+    width: 60%;
     margin: 5%;
 }
 }
@@ -11,7 +11,7 @@
 @media only screen and (max-width: 576px){
 
     .image-width{
-        height: 70%;
+        height: 100%;
         width: 100%;
         margin-top: 5%;
     }
